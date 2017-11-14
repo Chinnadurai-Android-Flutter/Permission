@@ -14,10 +14,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Alhazmy13 on 11/25/15.
- * Permission
- */
 public class PermissionActivity extends Activity {
 
     final private int REQUEST_CODE_ASK_PERMISSIONS = 323;

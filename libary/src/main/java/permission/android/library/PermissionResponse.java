@@ -9,10 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Alhazmy13 on 12/6/15.
- * Permission
- */
 public class PermissionResponse {
     private final Map<String, Integer> mPerms;
     private final ArrayList<String> mUserPermission;

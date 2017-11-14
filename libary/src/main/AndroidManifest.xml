@@ -1,10 +1,10 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="net.alhazmy13.libary">
-
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="permission.android.library">
 
     <application>
-
         <activity android:name="permission.android.library.PermissionActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
     </application>
 
 </manifest>

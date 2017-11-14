@@ -54,13 +54,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             camera.setTextColor( getResources().getColor( android.R.color.holo_green_dark ) );
         }
         if (permissionResponse.isGranted( Manifest.permission.CALL_PHONE )) {
-            gps.setText( "Allow" );
-            gps.setTextColor( getResources().getColor( android.R.color.holo_green_dark ) );
+            call.setText( "Allow" );
+            call.setTextColor( getResources().getColor( android.R.color.holo_green_dark ) );
 
         }
         if (permissionResponse.isGranted( Manifest.permission.READ_CONTACTS )) {
-            call.setText( "Allow" );
-            call.setTextColor( getResources().getColor( android.R.color.holo_green_dark ) );
+            gps.setText( "Allow" );
+            gps.setTextColor( getResources().getColor( android.R.color.holo_green_dark ) );
 
         }
 
