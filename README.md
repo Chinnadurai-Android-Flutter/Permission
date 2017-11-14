@@ -29,7 +29,7 @@ dependencies {
 # Usage
 
 
-After adding the library, you just need to create an instance from Gota libary and passing an array of permissions.
+After adding the library, you just need to create an instance from Permission libary and passing an array of permissions.
 
 ```java  
 new Permission.Builder( this )

@@ -2,7 +2,7 @@ package permission.android.library;
 
 /**
  * Created by Alhazmy13 on 5/20/16.
- * Gota
+ * Permission
  */
 class PermissionTags {
 
