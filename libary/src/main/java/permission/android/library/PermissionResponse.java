@@ -11,20 +11,20 @@ import java.util.Map;
 
 /**
  * Created by Alhazmy13 on 12/6/15.
- * Gota
+ * Permission
  */
-public class GotaResponse {
+public class PermissionResponse {
     private final Map<String, Integer> mPerms;
     private final ArrayList<String> mUserPermission;
     private Activity mActivity;
     private final int requestId;
     /**
-     * Instantiates a new Gota response.
+     * Instantiates a new Permission response.
      *
      * @param perms    the perms
      * @param userPerm the user perm
      */
-    GotaResponse(Map<String, Integer> perms, ArrayList<String> userPerm, Activity activity, int requestId) {
+    PermissionResponse(Map<String, Integer> perms, ArrayList<String> userPerm, Activity activity, int requestId) {
         this.mPerms = perms;
         this.mUserPermission = userPerm;
         this.mActivity = activity;

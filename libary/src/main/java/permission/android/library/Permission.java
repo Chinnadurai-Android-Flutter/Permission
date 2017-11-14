@@ -8,11 +8,8 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- * Created by Alhazmy13 on 11/24/15.
- * Gota
- */
-public class Gota {
+
+public class Permission {
 
     private WeakReference<Activity> context;
     /**
@@ -24,11 +21,11 @@ public class Gota {
      */
     static OnRequestPermissionsBack listener;
 
-    private Gota(Builder builder) {
+    private Permission(Builder builder) {
         context = builder.context;
         permissions = new ArrayList<>(Arrays.asList(builder.permissions));
         listener = builder.listener;
-        Intent callingIntent = GotaActivity.getCallingIntent(context.get(), permissions,builder.requestId);
+        Intent callingIntent = PermissionActivity.getCallingIntent(context.get(), permissions,builder.requestId);
         context.get().startActivity(callingIntent);
     }
 
@@ -40,9 +37,9 @@ public class Gota {
         /**
          * On request back.
          *
-         * @param gotaResponse the gota response
+         * @param permissionResponse the permission response
          */
-        void onRequestBack(int requestId,@NonNull GotaResponse gotaResponse);
+        void onRequestBack(int requestId,@NonNull PermissionResponse permissionResponse);
     }
 
     /**
@@ -68,12 +65,12 @@ public class Gota {
 
 
         /**
-         * With permissions gota . builder.
+         * With permissions  . builder.
          *
          * @param permissions the permissions
-         * @return the gota . builder
+         * @return the permission . builder
          */
-        public Gota.Builder withPermissions(String... permissions) {
+        public Permission.Builder withPermissions(String... permissions) {
             this.permissions = permissions;
             return this;
         }
@@ -84,29 +81,24 @@ public class Gota {
          * @param listener the listener
          * @return the listener
          */
-        public Gota.Builder setListener(OnRequestPermissionsBack listener) {
+        public Permission.Builder setListener(OnRequestPermissionsBack listener) {
             this.listener = listener;
             return this;
         }
 
-        /**
-         * Request id gota . builder.
-         *
-         * @param requestId the request id
-         * @return the gota . builder
-         */
-        public Gota.Builder requestId(int requestId){
+
+        public Permission.Builder requestId(int requestId){
             this.requestId = requestId;
             return this;
         }
 
         /**
-         * Check gota.
+         * Check permission.
          *
-         * @return the gota
+         * @return the permission
          */
-        public Gota check() {
-            return new Gota(this);
+        public Permission check() {
+            return new Permission(this);
         }
     }
 

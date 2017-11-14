@@ -16,9 +16,9 @@ import java.util.Map;
 
 /**
  * Created by Alhazmy13 on 11/25/15.
- * Gota
+ * Permission
  */
-public class GotaActivity extends Activity {
+public class PermissionActivity extends Activity {
 
     final private int REQUEST_CODE_ASK_PERMISSIONS = 323;
     private List<String> mPermissionsList;
@@ -37,8 +37,8 @@ public class GotaActivity extends Activity {
     private void init() {
 
         Intent intent = getIntent();
-        permissions = intent.getStringArrayListExtra(GotaTags.PERMISSIONS);
-        requestId = intent.getIntExtra(GotaTags.REQ_ID,-1);
+        permissions = intent.getStringArrayListExtra( PermissionTags.PERMISSIONS);
+        requestId = intent.getIntExtra( PermissionTags.REQ_ID,-1);
         mPermissionsList=new ArrayList<>();
 
         for(int i=0;i<permissions.size();i++){
@@ -61,12 +61,12 @@ public class GotaActivity extends Activity {
                 ActivityCompat.requestPermissions(this, mPermissionsList.toArray(new String[mPermissionsList.size()]),
                         REQUEST_CODE_ASK_PERMISSIONS);
             }else {
-                Gota.listener.onRequestBack(requestId,new GotaResponse(perms,this.permissions,this,requestId));
+                Permission.listener.onRequestBack(requestId,new PermissionResponse(perms,this.permissions,this,requestId));
                 finish();
             }
 
         }else{
-            Gota.listener.onRequestBack(requestId,new GotaResponse(perms,this.permissions,this,requestId));
+            Permission.listener.onRequestBack(requestId,new PermissionResponse(perms,this.permissions,this,requestId));
             finish();
         }
 
@@ -89,7 +89,7 @@ public class GotaActivity extends Activity {
             // Fill with results
             for (int i = 0; i < permissions.length; i++)
                 perms.put(permissions[i], grantResults[i]);
-            Gota.listener.onRequestBack(requestId,new GotaResponse(perms,this.permissions,this,requestId));
+            Permission.listener.onRequestBack(requestId,new PermissionResponse(perms,this.permissions,this,requestId));
             finish();
         }
     }
@@ -103,9 +103,9 @@ public class GotaActivity extends Activity {
      * @return the intent
      */
     protected static Intent getCallingIntent(Context activity, ArrayList permissions,int requestId){
-        Intent intent = new Intent(activity, GotaActivity.class);
-        intent.putExtra(GotaTags.PERMISSIONS,permissions);
-        intent.putExtra(GotaTags.REQ_ID,requestId);
+        Intent intent = new Intent(activity, PermissionActivity.class);
+        intent.putExtra( PermissionTags.PERMISSIONS,permissions);
+        intent.putExtra( PermissionTags.REQ_ID,requestId);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         return intent;
 

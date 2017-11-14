@@ -3,7 +3,7 @@
 
     <application>
 
-        <activity android:name="permission.android.library.GotaActivity"
+        <activity android:name="permission.android.library.PermissionActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
     </application>
 
