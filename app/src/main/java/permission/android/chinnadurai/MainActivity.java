@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initViews() {
         gps = (TextView) findViewById( R.id.gpsStatus );
         call = (TextView) findViewById( R.id.callStatus );
+
         camera = (TextView) findViewById( R.id.cameraStatus );
         checkButton = (Button) findViewById( R.id.checkButton );
         checkButton.setOnClickListener( this );
